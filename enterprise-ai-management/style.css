@@ -1,0 +1,35 @@
+:root{--bg:#eef1f4;--panel:#fff;--ink:#1b2430;--mute:#5d6b7a;--line:#d5dce4;--accent:#0f6b63;--accent-ink:#fff;--warn:#b45309;--bad:#b42318;--good:#18794e;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10161d;--panel:#18212b;--ink:#e6ebf0;--mute:#93a1b0;--line:#2a3643;--accent:#3cc2b3;--accent-ink:#06211e;--warn:#f0a247;--bad:#f27a70;--good:#4fd08e}}
+:root[data-theme="dark"]{--bg:#10161d;--panel:#18212b;--ink:#e6ebf0;--mute:#93a1b0;--line:#2a3643;--accent:#3cc2b3;--accent-ink:#06211e;--warn:#f0a247;--bad:#f27a70;--good:#4fd08e}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "IBM Plex Sans",system-ui,sans-serif}
+header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--line)}
+h1{font-size:20px;margin:0;font-weight:600;letter-spacing:-.01em}
+h2{font-size:16px;margin:0 0 12px;font-weight:600}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav button{background:none;border:0;color:var(--mute);font:inherit;padding:8px 14px;border-radius:6px;cursor:pointer}
+nav button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+main{max-width:1040px;margin:0 auto;padding:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px}
+.stat{border-left:3px solid var(--accent);padding:4px 0 4px 14px}
+.stat b{display:block;font-size:28px;font-weight:600}
+.stat span{color:var(--mute);font-size:13px}
+section{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:20px;margin-bottom:20px}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);font-size:14px}
+th{color:var(--mute);font-weight:500}
+.tag{display:inline-block;padding:2px 8px;border-radius:99px;font-size:12px;border:1px solid currentColor}
+.t-live,.t-approved{color:var(--good)}.t-paused,.t-pending{color:var(--warn)}.t-rejected{color:var(--bad)}
+.btn{background:var(--accent);color:var(--accent-ink);border:0;border-radius:6px;padding:8px 14px;font:inherit;font-weight:500;cursor:pointer}
+.btn.ghost{background:none;color:var(--ink);border:1px solid var(--line)}
+.btn.sm{padding:4px 10px;font-size:13px}
+form{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+input,select{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);min-width:0;flex:1 1 140px}
+.bar{height:8px;background:var(--line);border-radius:4px;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;background:var(--accent)}
+.empty{color:var(--mute);padding:12px 0}
+svg text{fill:var(--mute);font-size:11px}
